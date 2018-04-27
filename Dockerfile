@@ -6,8 +6,9 @@ FROM centos:latest
 
 RUN yum -y install epel-release
 
-RUN yum install nginx
+RUN yum -y install nginx
 
 EXPOSE 80
 
-CMD ["nginx", "-c", "/etc/nginx.conf"]
+#CMD ["nginx", "-c", "/etc/nginx/nginx.conf"]
+CMD ["nginx", "-g", "daemon off;"]
